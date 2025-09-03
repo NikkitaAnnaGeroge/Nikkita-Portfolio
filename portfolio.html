@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibrant Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 🔹 Animated Gradient Background */
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(270deg, #2563eb, #ec4899, #06b6d4, #9333ea);
+      background-size: 800% 800%;
+      animation: gradientMove 12s ease infinite;
+      color: white;
+      overflow: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #38bdf8;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f472b6;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2.2rem;
+    }
+
+    /* 🔹 Project Cards with Glow Hover */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(#2563eb, #ec4899, #06b6d4, #9333ea, #2563eb);
+      animation: spin 6s linear infinite;
+      z-index: 0;
+    }
+
+    .project-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    .project-card h3 {
+      color: #f472b6;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: white;
+      background: #2563eb;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #9333ea;
+    }
+
+    /* 🔹 Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background: #334155;
+      color: white;
+    }
+
+    button {
+      padding: 12px;
+      background: #ec4899;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Replace with your photo -->
+    <img src="nikkita.jpg" alt="My Profile Photo">
+    <h1>Hello, I’m Nikkita Anna George</h1>
+    <p>Aspiring Developer | Programmer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center;">
+      I am passionate about learning programming and building projects.  
+      I enjoy problem-solving and exploring new technologies.  
+      This portfolio is a showcase of my journey as a beginner developer.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>SJCET url-shortner</h3>
+        <p>Worked as a Frontend Developer for SJCET college URL shortener project, building a responsive user interface using React for generating and managing short links.</p>
+        <a href="https://github.com/NikkitaAnnaGeroge/Sjcet-Url-Shortner" target="_blank" class="btn">View Link</a>
+
+      </div>
+
+      <div class="project-card">
+        <h3>Contributed to μLearn tasks and activities  , enhancing skills in like Git, Web Development, etc.</h3>
+        <p>μLearn is a community-driven learning platform that helps students and professionals learn new skills through tasks, peer learning, and collaboration.</p>
+        <a href="nikkitaannageorge@mulearn" target="_blank" class="btn">View id</a>
+
+      </div>
+
+      <div class="project-card">
+        <h3>Data Visualization</h3>
+        <p>Analyzed a dataset using Python and created visual charts.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Nikkita Anna George" required>
+      <input type="email" placeholder="nikkitaannageorge8@gmail.com" required>
+      <textarea rows="5" placeholder="Coding my way to future"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Vibrant Portfolio | Designed by Nikkita Anna George</p>
+  </footer>
+
+</body>
+</html>
